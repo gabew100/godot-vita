@@ -37,6 +37,10 @@ jobs:
           cd vdpm
           ./bootstrap-vitasdk.sh
           ./install-all.sh
+          sudo chmod -R a+rX /usr/local/vitasdk
+          sudo find /usr/local/vitasdk -type f -path "*/bin/*" -exec chmod +x {} +
+          ls -la /usr/local/vitasdk/bin/ | head -20
+          test -x /usr/local/vitasdk/bin/pacman
           export PATH=$VITASDK/bin:$PATH
           vdpm vita-rss-libdl
           cd ../vita-packages-extra/pvr_psp2
