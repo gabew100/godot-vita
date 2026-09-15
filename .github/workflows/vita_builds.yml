@@ -35,12 +35,10 @@ jobs:
           git clone https://github.com/vitasdk/vdpm
           git clone https://github.com/isage/vita-packages-extra
           cd vdpm
+      git checkout e423be457622a9ba517858f4831566dcd263729a
           ./bootstrap-vitasdk.sh
           ./install-all.sh
-          sudo chmod -R a+rX /usr/local/vitasdk
-          sudo find /usr/local/vitasdk -type f -path "*/bin/*" -exec chmod +x {} +
-          ls -la /usr/local/vitasdk/bin/ | head -20
-          test -x /usr/local/vitasdk/bin/pacman
+
           export PATH=$VITASDK/bin:$PATH
           vdpm vita-rss-libdl
           cd ../vita-packages-extra/pvr_psp2
