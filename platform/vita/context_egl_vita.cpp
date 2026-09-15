@@ -82,7 +82,7 @@ Error ContextEGL_Vita::initialize() {
 	vglSetSemanticBindingMode(VGL_MODE_SHADER_PAIR); // FIXME: This should be VGL_MODE_POSTPONED but with it there's a crash in SceLibKernel
 	vglSetParamBufferSize(4 * 1024 * 1024);
 	vglUseTripleBuffering(GL_FALSE);
-	vglInitWithCustomThreshold(0, SCREEN_W, SCREEN_H, 4 * 1024 * 1024, 0, 0, 0, SCE_GXM_MULTISAMPLE_4X);
+	vglInitWithCustomThreshold(0, SCREEN_W, SCREEN_H, 32 * 1024 * 1024, 16 * 1024 * 1024, 8 * 1024 * 1024, 0, SCE_GXM_MULTISAMPLE_4X);
 #else
 	// Get an appropriate EGL framebuffer configuration
 	static const EGLint attributeList[] = {
